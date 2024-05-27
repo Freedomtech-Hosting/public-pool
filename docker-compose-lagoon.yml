@@ -1,0 +1,22 @@
+version: '3.8'
+
+services:
+  public-pool:
+    container_name: public-pool
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    extra_hosts:
+      - "host.docker.internal:host-gateway"
+    ports:
+      - 3333
+      - 3334
+    volumes:
+      - "./${NETWORK}-DB:/public-pool/DB"
+      - "./.env:/public-pool/.env:ro"
+    environment:
+      - NODE_ENV=production
+    labels:
+      lagoon.type: basic
+      lagoon.service.usecomposeports: true

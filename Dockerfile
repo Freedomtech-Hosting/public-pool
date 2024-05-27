@@ -33,6 +33,6 @@ WORKDIR /public-pool
 
 # Copy built binaries into the final image
 COPY --from=build /build .
-#COPY .env.example .env
+COPY .env.example .env
 
 CMD ["/usr/local/bin/node", "dist/main"]
