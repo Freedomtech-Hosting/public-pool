@@ -5,3 +5,4 @@ Dockerfile
 .vscode
 .gitignore
 full-setup/
+.git
