@@ -18,6 +18,6 @@ services:
     environment:
       - NODE_ENV=production
     labels:
-      lagoon.type: basic-persistent
+      lagoon.type: public-pool
       lagoon.persistent: /public-pool/DB
       lagoon.service.usecomposeports: true
